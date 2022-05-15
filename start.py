@@ -7,5 +7,8 @@ app = Flask(__name__)
 def index_page() -> str:
     return render_template('index.html')
 
+@app.route('/filter')
+def filter_page():
+    return render_template('filter.html')
 
 app.run(debug=True,host='0.0.0.0')
