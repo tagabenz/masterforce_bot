@@ -1,1 +1,4 @@
 Flask
+uWSGI
+requests
+redis

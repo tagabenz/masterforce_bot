@@ -1,6 +1,7 @@
-FROM python:alpine
-  WORKDIR app
-  COPY requirements.txt .
+FROM python:latest
+  RUN groupadd -r uwsgi && useradd -r -g uwsgi uwsgi
+  WORKDIR /app
+  COPY . .
   RUN pip install -r requirements.txt
-  ENTRYPOINT [ "python" ]
-  CMD [ "start.py" ]
+  USER uwsgi
+  CMD ["./cmd.sh"]

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
         {% if title %}
@@ -10,17 +10,11 @@
         <link rel="stylesheet" href="static/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i">
     </head>
-
     <body>
-        <header>
-            <h1><a class="header_text" href="/">avito_online_parsing_bot</a></h1>
-            <p id="user_name">{{ session['user'] }}</p>
-            <img id="user_logo" src=/monster/{{ session['user'] }}>
-        </header>
-
-        {% block body%}
-
-        {% endblock %}
-
+        <form action="/index" method="POST" >
+            <fieldset><legend><h2>Пожалуйста представтесь</h2></legend>
+                <input type="text" name="name" required>
+                <div align="center"><button type="submit">Продолжить</button></div></fieldset>
+        </form>
     </body>
 </html>
