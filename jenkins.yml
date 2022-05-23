@@ -5,10 +5,10 @@ masterforce:
   environment:
    ENV: PROD
   links:
-   - dnmonster
-   - redis
+    - dnmonster
+    - redis
 
 dnmonster:
-  image: amouat/dnmonster:latest
+  image: amouat/dnmonster
 redis:
-  image: redis:latest
+  image: redis
