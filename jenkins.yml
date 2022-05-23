@@ -9,6 +9,6 @@ masterforce:
    - redis
 
 dnmonster:
-  image: amouat/dnmonster
+  image: amouat/dnmonster:latest
 redis:
-  image: redis
+  image: redis:latest
