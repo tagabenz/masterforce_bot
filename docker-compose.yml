@@ -1,17 +1,18 @@
-masterforce:
-  build: .
-  ports:
-   - "5000:5000"
-  environment:
-   ENV: DEV
-  volumes:
-   - /Volumes/HDD/Python/venv_mf:/app
-  links:
-   - dnmonster
-   - redis
+services:
+    masterforce:
+      build: .
+      ports:
+       - "5000:5000"
+      environment:
+       ENV: DEV
+      volumes:
+       - /Volumes/HDD/Python/venv_mf:/app
+      links:
+       - dnmonster
+       - redis
 
-dnmonster:
-  image: amouat/dnmonster:latest
+    dnmonster:
+      image: amouat/dnmonster:latest
 
-redis:
-  image: redis:latest
+    redis:
+      image: redis:latest
