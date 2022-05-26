@@ -8,8 +8,6 @@ services:
 
     masterforce:
         build: .
-        volumes:
-         - /Volumes/HDD/Python/venv_mf:/app
         links:
          - dnmonster
          - redis
