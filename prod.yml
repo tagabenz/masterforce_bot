@@ -1,0 +1,22 @@
+services:
+    proxy:
+        image: nginx_proxy
+        links:
+         - masterforce
+        ports:
+         - "80:80"
+
+    masterforce:
+        build: .
+        volumes:
+         - /Volumes/HDD/Python/venv_mf:/app
+        links:
+         - dnmonster
+         - redis
+        environment:
+         ENV: PROD
+
+    dnmonster:
+      image: amouat/dnmonster:latest
+    redis:
+      image: redis:latest
