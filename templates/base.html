@@ -13,14 +13,19 @@
 
     <body>
         <header>
-            <h1><a class="header_text" href="/">avito_online_parsing_bot</a></h1>
-            <p id="user_name">{{ session['user'] }}</p>
-            <img id="user_logo" src=/monster/{{ session['user'] }}>
+            <table>
+                <tr id="header">
+                    <td><h1><a class="header_text" href="/">avito_online_parsing_bot</a></h1></td>
+                    <td><p id="user_name">{{ session['user'] }}</p></td>
+                    <td><img id="user_logo" src=/monster/{{ session['user'] }}></td>
+                </tr>
+            </table>
         </header>
+        <div id="page">
+            {% block body%}
 
-        {% block body%}
-
-        {% endblock %}
+            {% endblock %}
+        </div>
 
     </body>
 </html>
