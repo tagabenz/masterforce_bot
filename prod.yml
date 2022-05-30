@@ -16,11 +16,6 @@ services:
 
     dnmonster:
       image: amouat/dnmonster:latest
+
     redis:
       image: redis:latest
-    logspout:
-      image: amouat/logspout-logstash
-      volumes:
-        - /var/run/docker.sock:/tmp/docker.sock
-      ports:
-        - "8000:90"
