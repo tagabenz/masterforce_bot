@@ -1,9 +1,13 @@
 services:
-<<<<<<< HEAD
+  proxy:
+    image: nginx_proxy
+    links:
+     - masterforce
+    ports:
+     - "80:80"
+
   masterforce:
     build: .
-    expose:
-      - "9090"
     environment:
       ENV: PROD
     links:
@@ -14,19 +18,3 @@ services:
     image: amouat/dnmonster
   redis:
     image: redis
-=======
-    masterforce:
-      build: .
-      expose:
-       - "9090"
-      environment:
-       ENV: PROD
-      links:
-       - dnmonster
-       - redis
-
-    dnmonster:
-      image: amouat/dnmonster
-    redis:
-      image: redis
->>>>>>> develop
